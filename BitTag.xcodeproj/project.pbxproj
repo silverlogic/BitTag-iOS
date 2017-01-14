@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		883C58BE1E2A98550062957F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BD1E2A98550062957F /* APIClient.swift */; };
+		883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */; };
+		883C58C21E2AA9C30062957F /* BTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58C11E2AA9C30062957F /* BTUser.swift */; };
 		4D8447241E2A9C8E00606949 /* BTFacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8447231E2A9C8E00606949 /* BTFacebookLoginViewController.swift */; };
 		5DAF8D1210CAA6FB146DFBAE /* Pods_BitTagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */; };
-		5F2966A658B9A04DE4BB0D7E /* Pods_BitTag_BitTagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6F936A9338BFADC2684123 /* Pods_BitTag_BitTagTests.framework */; };
 		88FD8D971E2A85CF0096E5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FD8D961E2A85CF0096E5EB /* AppDelegate.swift */; };
 		88FD8D991E2A85CF0096E5EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FD8D981E2A85CF0096E5EB /* FirstViewController.swift */; };
 		88FD8D9B1E2A85CF0096E5EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FD8D9A1E2A85CF0096E5EB /* SecondViewController.swift */; };
@@ -35,6 +37,9 @@
 		070836BE68553360CED27E4C /* Pods-BitTag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTag.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTag/Pods-BitTag.release.xcconfig"; sourceTree = "<group>"; };
 		3355482E580149DE58AEBBC2 /* Pods_BitTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB542108308541B411C0AB3 /* Pods-BitTagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTagTests/Pods-BitTagTests.release.xcconfig"; sourceTree = "<group>"; };
+		883C58BD1E2A98550062957F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ServiceClasses/Singletons/APIClient.swift; sourceTree = "<group>"; };
+		883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTExtendedError.swift; path = Models/BTExtendedError.swift; sourceTree = "<group>"; };
+		883C58C11E2AA9C30062957F /* BTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTUser.swift; path = Models/BTUser.swift; sourceTree = "<group>"; };
 		4D8447231E2A9C8E00606949 /* BTFacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTFacebookLoginViewController.swift; sourceTree = "<group>"; };
 		4D8447251E2AA19600606949 /* BitTag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitTag-Bridging-Header.h"; sourceTree = "<group>"; };
 		6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,10 +54,10 @@
 		88FD8DA91E2A85CF0096E5EB /* BitTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitTagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FD8DAD1E2A85CF0096E5EB /* BitTagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitTagTests.swift; sourceTree = "<group>"; };
 		88FD8DAF1E2A85CF0096E5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C271E63C2A0068197E601CEC /* Pods-BitTag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTag/Pods-BitTag.debug.xcconfig"; sourceTree = "<group>"; };
 		91C47F44CA84E85B590213EA /* Pods-BitTag-BitTagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTag-BitTagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTag-BitTagTests/Pods-BitTag-BitTagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD6F936A9338BFADC2684123 /* Pods_BitTag_BitTagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTag_BitTagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C271E63C2A0068197E601CEC /* Pods-BitTag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTag/Pods-BitTag.debug.xcconfig"; sourceTree = "<group>"; };
-		DCABA9A71952C899D02CCAC1 /* Pods-BitTag-BitTagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTag-BitTagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTag-BitTagTests/Pods-BitTag-BitTagTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DAF8D1210CAA6FB146DFBAE /* Pods_BitTagTests.framework in Frameworks */,
-				5F2966A658B9A04DE4BB0D7E /* Pods_BitTag_BitTagTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +87,16 @@
 				070836BE68553360CED27E4C /* Pods-BitTag.release.xcconfig */,
 				054C8BDA39C08B3D33997E29 /* Pods-BitTagTests.debug.xcconfig */,
 				3AB542108308541B411C0AB3 /* Pods-BitTagTests.release.xcconfig */,
-				91C47F44CA84E85B590213EA /* Pods-BitTag-BitTagTests.debug.xcconfig */,
-				DCABA9A71952C899D02CCAC1 /* Pods-BitTag-BitTagTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		883C58BC1E2A983E0062957F /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				883C58BD1E2A98550062957F /* APIClient.swift */,
+			);
+			name = Singletons;
 			sourceTree = "<group>";
 		};
 		88FD8D8A1E2A85CF0096E5EB = {
@@ -139,6 +149,8 @@
 		88FD8DB81E2A85F80096E5EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */,
+				883C58C11E2AA9C30062957F /* BTUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 		88FD8DBB1E2A860D0096E5EB /* ServiceClasses */ = {
 			isa = PBXGroup;
 			children = (
+				883C58BC1E2A983E0062957F /* Singletons */,
 			);
 			name = ServiceClasses;
 			sourceTree = "<group>";
@@ -195,7 +208,6 @@
 			children = (
 				3355482E580149DE58AEBBC2 /* Pods_BitTag.framework */,
 				6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */,
-				AD6F936A9338BFADC2684123 /* Pods_BitTag_BitTagTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -405,10 +417,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883C58C21E2AA9C30062957F /* BTUser.swift in Sources */,
 				88FD8D9B1E2A85CF0096E5EB /* SecondViewController.swift in Sources */,
 				88FD8D971E2A85CF0096E5EB /* AppDelegate.swift in Sources */,
-				4D8447241E2A9C8E00606949 /* BTFacebookLoginViewController.swift in Sources */,
 				88FD8D991E2A85CF0096E5EB /* FirstViewController.swift in Sources */,
+				883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */,
+				883C58BE1E2A98550062957F /* APIClient.swift in Sources */,
+				4D8447241E2A9C8E00606949 /* BTFacebookLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
