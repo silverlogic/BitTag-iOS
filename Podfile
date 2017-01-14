@@ -6,6 +6,8 @@ target 'BitTag' do
   use_frameworks!
 
   # Pods for BitTag
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit'
 
   target 'BitTagTests' do
     inherit! :search_paths
