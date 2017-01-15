@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class BTInviteFriendsViewController: UIViewController {
 
@@ -16,9 +17,13 @@ class BTInviteFriendsViewController: UIViewController {
     @IBOutlet fileprivate weak var _durationLabel: UILabel!
     @IBOutlet fileprivate weak var _buyInTextField: UITextField!
     
-    fileprivate var _currentBuyIn: Int? = 10
+    fileprivate var _currentBuyIn: Float = 1000.0 / 1000000.0
     
     fileprivate var _selectedIndexPaths: [IndexPath]?
+    var centerPoint: CLLocationCoordinate2D!
+    var radius: Float!
+    var duration: Float = 3.0
+    var users = [BTUser]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +48,65 @@ class BTInviteFriendsViewController: UIViewController {
         updateBuyInTextField()
         updateDurationLabel()
         updateCreateButton()
+        _tableView.dataSource = self
+        _tableView.delegate = self
+        SVProgressHUD.show()
+        DispatchQueue.global(qos: .default).async {
+            APIClient.shared.getUsers(success: { (users: [BTUser]) in
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                    self.users = users.filter({ $0.userId != AuthenticationManager.shared.userId })
+                    self._tableView.reloadData()
+                }
+            }, failure: { (error: Error?) in
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+            })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let newgamecontroller = segue.destination as? BTCreateGameViewController,
+            let createdGame = sender as? BTGame else { return }
+        newgamecontroller.createdGame = createdGame
+        
     }
     
     @IBAction func durationSliderValueChanged(_ sender: UISlider) {
         _durationSlider.value = round(_durationSlider.value)
+        duration = _durationSlider.value
         updateDurationLabel()
+    }
+    
+    @IBAction func invitebuttontapped() {
+        let newGame = BTGame()
+        newGame.coordinates = [NSNumber(value:centerPoint.latitude), NSNumber(value: centerPoint.longitude)]
+        newGame.centerPointType = "Point"
+        newGame.radius = radius as NSNumber
+        newGame.buyin = "\(_currentBuyIn)" as NSString
+        SVProgressHUD.show()
+        APIClient.shared.postGame(newGame, success: { (createdGame: BTGame) in
+            let dispatchQueue = DispatchQueue(label: "create participants", qos: .default, attributes: .concurrent)
+            let dispatchGroup = DispatchGroup()
+            self._selectedIndexPaths?.forEach({ (indexPath) in
+                dispatchGroup.enter()
+                dispatchQueue.async(group: dispatchGroup, execute: {
+                    ParticipantsManager.shared.participantJoinGame(gameId: createdGame.gameId, userId: self.users[indexPath.row].userId, success: { (participate: BTParticipant) in
+                        dispatchGroup.leave()
+                    }, failure: { (error: Error?) in
+                        dispatchGroup.leave()
+                    })
+                })
+            })
+            dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "goToNewGame", sender: createdGame)
+            })
+        }) { (error: Error?) in
+            SVProgressHUD.dismiss()
+        }
     }
 }
 
@@ -68,18 +127,16 @@ extension BTInviteFriendsViewController {
     @objc fileprivate func doneBuyInTextFieldTapped() {
         _buyInTextField.endEditing(true)
         if _buyInTextField.text?.isEmpty != true {
-            _currentBuyIn = Int(_buyInTextField.text!)
+            _currentBuyIn = Float(_buyInTextField.text!)! / Float(1000000.0)
         }
-        updateBuyInTextField()
     }
     
     @objc fileprivate func cancelBuyInTextFieldTapped() {
         _buyInTextField.endEditing(true)
-        updateBuyInTextField()
     }
     
     fileprivate func updateBuyInTextField() {
-        _buyInTextField.text = String(describing: _currentBuyIn!)
+        _buyInTextField.text = "1000"
     }
 }
 
@@ -90,7 +147,7 @@ extension BTInviteFriendsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,6 +155,8 @@ extension BTInviteFriendsViewController: UITableViewDataSource {
         if let _ = _selectedIndexPaths?.index(of: indexPath) {
             cell.accessoryType = .checkmark
         }
+        let user = users[indexPath.row]
+        cell.configureCell(name: "\(user.firstName) \(user.lastName)", imageUrl: user.avatarUrl!)
         return cell
     }
 }

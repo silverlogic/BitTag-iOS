@@ -6,3 +6,4 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <Discovery/Discovery.h>
+#import <YYWebImage/YYWebImage.h>

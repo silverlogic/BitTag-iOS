@@ -17,6 +17,7 @@ final class APIClient {
     
     // MARK: - Attributes
     fileprivate let _socialAuthEndpoint = "social-auth"
+    fileprivate let _usersEndpoint = "users"
     fileprivate let _userEndpoint = "users/me"
     fileprivate let _participantsEndpoint = "participants"
     fileprivate let _participantsJoinGameEndpoint = "participants/:participantId/join"
@@ -52,6 +53,7 @@ final class APIClient {
         let serverErrorResponseDescriptor = RKResponseDescriptor(mapping: extendedErrorResponseMapping, method: .any, pathPattern: nil, keyPath: nil, statusCodes: serverErrorStatusCode)
         let postSocialAuthResponseDescritptor = RKResponseDescriptor(mapping: userResponseMapping, method: .POST, pathPattern: _socialAuthEndpoint, keyPath: nil, statusCodes: successStatusCode)
         let getUserResponseDescriptor = RKResponseDescriptor(mapping: userResponseMapping, method: .GET, pathPattern: _userEndpoint, keyPath: nil, statusCodes: successStatusCode)
+        let getUsersResponseDescriptor = RKResponseDescriptor(mapping: userResponseMapping, method: .GET, pathPattern: _usersEndpoint, keyPath: "results", statusCodes: successStatusCode)
         let postParticipantResponseDescriptor = RKResponseDescriptor(mapping: participantResponseMapping, method: .POST, pathPattern: _participantsEndpoint, keyPath: nil, statusCodes: successStatusCode)
         let getParticipantsResponseDescriptor = RKResponseDescriptor(mapping: participantResponseMapping, method: .GET, pathPattern: _participantsEndpoint, keyPath: "results", statusCodes: successStatusCode)
         let postParticipantsJoinResponseDescriptor = RKResponseDescriptor(mapping: emptyResponseMapping, method: .POST, pathPattern: _participantsJoinGameEndpoint, keyPath: nil, statusCodes: successStatusCode)
@@ -77,7 +79,7 @@ final class APIClient {
         restKitManager?.addResponseDescriptors(from: [clientErrorResponseDescriptor!,
                                                       serverErrorResponseDescriptor!,
                                                       postSocialAuthResponseDescritptor!,
-                                                      getUserResponseDescriptor!,
+                                                      getUserResponseDescriptor!,getUsersResponseDescriptor!,
                                                       postParticipantResponseDescriptor!,getParticipantsResponseDescriptor!,postParticipantsJoinResponseDescriptor!,postParticipantTaggedParticipantResponseDescriptor!,
                                                       postGameResponseDescriptor!,getGamesResponseDescriptor!,getGameResponseDescriptor!,postGameStartResponseDescriptor!])
         // Set default header
@@ -124,13 +126,26 @@ extension APIClient {
             failure(error!)
         }
     }
+    
+    func getUsers(success: @escaping (_ users: [BTUser]) -> Void, failure: @escaping (_ error: Error?) -> Void) {
+        RKObjectManager.shared().getObjectsAtPath(_usersEndpoint, parameters: nil, success: { (operation: RKObjectRequestOperation?, mappingResult: RKMappingResult?) in
+            guard let users = mappingResult?.array() as? [BTUser] else {
+                failure(nil)
+                return
+            }
+            success(users)
+        }) { (operation: RKObjectRequestOperation?, error: Error?) in
+            failure(error!)
+        }
+    }
 }
 
 
 // MARK: - Participant Endpoints
 extension APIClient {
     func postParticipant(_ participant: BTParticipant, success: @escaping (_ participant: BTParticipant) -> Void, failure: @escaping (_ error: Error?) -> Void) {
-        RKObjectManager.shared().post(participant, path: _participantsEndpoint, parameters: nil, success: { (operation: RKObjectRequestOperation?, mappingResult: RKMappingResult?) in
+        let parameters = ["user":participant.userId]
+        RKObjectManager.shared().post(participant, path: _participantsEndpoint, parameters: parameters, success: { (operation: RKObjectRequestOperation?, mappingResult: RKMappingResult?) in
             guard let participant = mappingResult?.firstObject as? BTParticipant else {
                 failure(nil)
                 return

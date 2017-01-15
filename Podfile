@@ -11,6 +11,7 @@ target 'BitTag' do
   pod 'FBSDKCoreKit'
   pod 'RestKit', '~> 0.27'
   pod 'SVProgressHUD', '2.1.2'
+  pod 'YYWebImage'
   
   # avoids issues with objc_msgSend
   post_install do |installer|

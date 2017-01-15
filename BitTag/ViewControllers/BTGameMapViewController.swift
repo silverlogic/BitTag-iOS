@@ -51,7 +51,7 @@ class BTGameMapViewController: UIViewController {
     @IBAction fileprivate func startButtonTapped(_ sender: UIButton) {
     }
     @IBAction fileprivate func declineInviteTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
     @IBAction fileprivate func acceptInviteTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -65,6 +65,12 @@ class BTGameMapViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
         setupMap()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let inviteFriendsViewController = segue.destination as? BTInviteFriendsViewController else { return }
+        inviteFriendsViewController.radius = _currentDistanse
+        inviteFriendsViewController.centerPoint = _gameStartAnnotation?.coordinate
     }
 }
 

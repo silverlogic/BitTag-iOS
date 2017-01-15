@@ -16,6 +16,7 @@ final class AuthenticationManager {
     
     // MARK: - Attributes
     fileprivate var _currentUser: BTUser!
+    var userId: NSNumber!
     
     
     // Initializers
@@ -30,6 +31,7 @@ extension AuthenticationManager {
         _currentUser.facebookAccessToken = accessToken as NSString
         APIClient.shared.postSocialAuth(user: _currentUser, success: { (user: BTUser) in
             self._currentUser = user
+            self.userId = self._currentUser.userId
             success()
         }) { (error: Error?) in
             failure(error)
@@ -45,6 +47,7 @@ extension AuthenticationManager {
         _currentUser = BTUser()
         APIClient.shared.getUser(_currentUser, success: { (user: BTUser) in
             self._currentUser = user
+            self.userId = self._currentUser.userId
             success()
         }) { (error: Error?) in
             failure(error)

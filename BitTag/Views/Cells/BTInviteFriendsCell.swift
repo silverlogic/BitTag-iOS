@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYWebImage
 
 class BTInviteFriendsCell: UITableViewCell {
 
@@ -36,16 +37,15 @@ extension BTInviteFriendsCell {
     
     fileprivate func clearCell() {
         accessoryType = .none
-        _nameLabel.text = "        Ivan Ivanov"
+        _nameLabel.text = ""
         _imageView.image = #imageLiteral(resourceName: "BitTag_Logo")
     }
 }
 
 // MARK: - Public
 extension BTInviteFriendsCell {
-    
-    // @TODO: Configure from friend data when will be model
-//    func configure(_ ) {
-//        
-//    }
+    func configureCell(name: String, imageUrl: NSURL) {
+        _nameLabel.text = name
+        _imageView.yy_setImage(with: imageUrl as URL, placeholder: #imageLiteral(resourceName: "BitTag_Logo"), options: [.progressiveBlur, .setImageWithFadeAnimation], completion: nil)
+    }
 }

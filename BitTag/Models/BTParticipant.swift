@@ -13,7 +13,7 @@ final class BTParticipant: NSObject {
     // MARK: - Attributes
     fileprivate var _participantId = 0 as NSNumber
     fileprivate var _gameId = 0 as NSNumber
-    fileprivate var _user: BTUser!
+    fileprivate var _user = BTUser()
     fileprivate var _userId = 0 as NSNumber
     fileprivate var _status = "" as NSString
 }
@@ -73,7 +73,6 @@ extension BTParticipant {
     class func fieldMappings() -> [String:String] {
         return ["id":"participantId",
                 "game":"gameId",
-                "status":"status",
-                "user":"userId"]
+                "status":"status"]
     }
 }

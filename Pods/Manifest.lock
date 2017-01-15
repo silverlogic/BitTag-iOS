@@ -34,6 +34,13 @@ PODS:
   - SOCKit (1.1)
   - SVProgressHUD (2.1.2)
   - TransitionKit (2.2.1)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - Discovery (~> 1.0)
@@ -41,6 +48,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - RestKit (~> 0.27)
   - SVProgressHUD (= 2.1.2)
+  - YYWebImage
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -53,7 +61,10 @@ SPEC CHECKSUMS:
   SOCKit: c7376ac262bea9115b8f749358f762522a47d392
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 83d25b767e38ed45f2f756f13f1ac26d902bcb14
+PODFILE CHECKSUM: 2b4ee0d9dc9720fa83b979529a192085e49deee2
 
 COCOAPODS: 1.1.1

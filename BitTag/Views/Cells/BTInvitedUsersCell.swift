@@ -39,4 +39,9 @@ extension BTInvitedUsersCell {
 //        _nameLabel.text = ""
 //        _paidImageView.image = nil
     }
+    
+    func configureCell(name: String, imageUrl: NSURL) {
+        _nameLabel.text = name
+        _imageView.yy_setImage(with: imageUrl as URL, placeholder: #imageLiteral(resourceName: "BitTag_Logo"), options: [.progressiveBlur, .setImageWithFadeAnimation], completion: nil)
+    }
 }

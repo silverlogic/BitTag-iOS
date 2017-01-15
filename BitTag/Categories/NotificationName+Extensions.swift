@@ -13,4 +13,5 @@ extension Notification.Name {
     static let UpdateCurrentGame = Notification.Name("UpdateCurrentGame")
     static let GameStarted = Notification.Name("GameStarted")
     static let GameEnded = Notification.Name("GameEnded")
+    static let ParticipantJoined = Notification.Name("ParticipantJoined")
 }

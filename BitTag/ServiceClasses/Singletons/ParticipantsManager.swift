@@ -33,19 +33,19 @@ extension ParticipantsManager {
     }
     
     func loadAvaliableParticipates(gameId: NSNumber?, userId: NSNumber?, status: NSString?, success: @escaping (_ participants: [BTParticipant]) -> Void, failure: @escaping (_ error: Error?) -> Void) {
-        var parameters: [String:Any]?
+        var parameters = [String:Any]()
         if gameId != nil || userId != nil || status != nil {
-            parameters = [String:Any]()
             if let game = gameId {
-                parameters?["game"] = "\(game)"
+                parameters["game"] = "\(game)"
             }
             if let user = userId {
-                parameters?["user"] = "\(user)"
+                parameters["user"] = "\(user)"
             }
             if let participantStatus = status {
-                parameters?["status"] = "\(participantStatus)"
+                parameters["status"] = "\(participantStatus)"
             }
         }
+        parameters["expand"] = "user"
         APIClient.shared.getParticipants(parameters: parameters, success: { (participants: [BTParticipant]) in
             success(participants)
         }) { (error: Error?) in

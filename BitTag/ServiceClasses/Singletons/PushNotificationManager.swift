@@ -35,13 +35,12 @@ extension PushNotificationManager {
         guard let pushNotificationType = userInfo["type"] as? String else { return }
         switch pushNotificationType {
             case "you_invited":
-                // @TODO: Handle onece invite flow created
             break
             case "participant_invited":
                 // @TODO: Handle onece invite flow created
             break
             case "participant_joined":
-                // @TODO: Handle onece invite flow created
+                NotificationCenter.default.post(name: .ParticipantJoined, object: nil)
             break
             case "game_started":
                 // @TODO: Handle once game logic implemented
