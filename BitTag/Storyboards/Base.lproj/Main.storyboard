@@ -168,26 +168,52 @@
                                 <color key="textColor" red="0.94509803920000002" green="0.36470588240000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hjw-5a-SGL">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hjw-5a-SGL">
                                 <rect key="frame" x="0.0" y="509" width="375" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nfi-Fd-vVB">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nfi-Fd-vVB">
                                     <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="9" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LGk-50-rZE">
-                                        <rect key="frame" x="0.0" y="9" width="90" height="90"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="center" reuseIdentifier="BTFriendsInRangeCollectionViewCell" id="LGk-50-rZE" customClass="BTFriendsInRangeCollectionViewCell" customModule="BitTag" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="14" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-goldbitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-oZ-PLA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-friendinrange" translatesAutoresizingMaskIntoConstraints="NO" id="A2P-Cc-Pdd">
+                                                    <rect key="frame" x="51" y="51" width="36" height="36"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="A2P-Cc-Pdd" firstAttribute="top" secondItem="LGk-50-rZE" secondAttribute="topMargin" constant="43" id="Igf-gt-y6L"/>
+                                            <constraint firstItem="A2P-Cc-Pdd" firstAttribute="leading" secondItem="LGk-50-rZE" secondAttribute="leadingMargin" constant="43" id="Iyc-Wg-ex5"/>
+                                            <constraint firstItem="bKR-oZ-PLA" firstAttribute="top" secondItem="LGk-50-rZE" secondAttribute="top" id="JAn-lo-x3s"/>
+                                            <constraint firstAttribute="bottom" secondItem="bKR-oZ-PLA" secondAttribute="bottom" id="YVw-gg-4et"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="A2P-Cc-Pdd" secondAttribute="trailing" constant="-5" id="dBB-os-jj8"/>
+                                            <constraint firstAttribute="trailing" secondItem="bKR-oZ-PLA" secondAttribute="trailing" id="gnf-b3-qsA"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="A2P-Cc-Pdd" secondAttribute="bottom" constant="-5" id="tsq-hp-3fR"/>
+                                            <constraint firstItem="bKR-oZ-PLA" firstAttribute="leading" secondItem="LGk-50-rZE" secondAttribute="leading" id="wgU-A6-VhI"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="_imageView" destination="bKR-oZ-PLA" id="Ybi-AL-YKS"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vAX-aR-2nh" id="94F-zl-q3r"/>
+                                    <outlet property="delegate" destination="vAX-aR-2nh" id="eFO-Pw-ZGM"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,6 +223,7 @@
                             <constraint firstItem="5th-Nf-1QU" firstAttribute="top" secondItem="heg-8z-8na" secondAttribute="bottom" constant="8" symbolic="YES" id="7ek-vR-dhi"/>
                             <constraint firstItem="Aoi-nD-E27" firstAttribute="centerX" secondItem="vg3-4u-Zre" secondAttribute="centerX" constant="79.5" id="8gn-7N-Ohk"/>
                             <constraint firstItem="73Y-wV-JSw" firstAttribute="baseline" secondItem="3dF-P2-DHj" secondAttribute="baseline" id="Fk2-xQ-P8w"/>
+                            <constraint firstItem="Hjw-5a-SGL" firstAttribute="top" secondItem="e7b-N2-dsh" secondAttribute="top" id="FyV-MZ-aLU"/>
                             <constraint firstItem="AsB-38-JnB" firstAttribute="leading" secondItem="vg3-4u-Zre" secondAttribute="leading" id="Hzk-8J-mVA"/>
                             <constraint firstItem="SRr-bA-1Me" firstAttribute="top" secondItem="AsB-38-JnB" secondAttribute="top" id="IbN-cE-KoX"/>
                             <constraint firstItem="LfT-6l-4dD" firstAttribute="leading" secondItem="vg3-4u-Zre" secondAttribute="leadingMargin" id="Jau-A2-wln"/>
@@ -218,12 +245,15 @@
                             <constraint firstItem="4Tw-pe-kuf" firstAttribute="leading" secondItem="5th-Nf-1QU" secondAttribute="trailing" constant="8" symbolic="YES" id="Yza-kJ-b2t"/>
                             <constraint firstItem="AsB-38-JnB" firstAttribute="bottom" secondItem="GY4-C6-VUc" secondAttribute="top" id="ZGc-Wb-o7K"/>
                             <constraint firstItem="5th-Nf-1QU" firstAttribute="baseline" secondItem="4Tw-pe-kuf" secondAttribute="baseline" id="ZJd-5B-OZI"/>
+                            <constraint firstItem="Hjw-5a-SGL" firstAttribute="trailing" secondItem="MWa-Ta-nH8" secondAttribute="trailing" id="ZRP-ql-2wG"/>
                             <constraint firstItem="e7b-N2-dsh" firstAttribute="leading" secondItem="vg3-4u-Zre" secondAttribute="leadingMargin" constant="28" id="aiq-ll-3C1"/>
                             <constraint firstItem="SRr-bA-1Me" firstAttribute="trailing" secondItem="AsB-38-JnB" secondAttribute="trailing" id="cFG-f1-hpo"/>
                             <constraint firstItem="AsB-38-JnB" firstAttribute="leading" secondItem="MWa-Ta-nH8" secondAttribute="leading" id="eT0-fp-4d4"/>
                             <constraint firstItem="z3p-oZ-8ur" firstAttribute="leading" secondItem="yBe-iL-DGK" secondAttribute="trailing" constant="8" symbolic="YES" id="gl4-UK-8H2"/>
                             <constraint firstItem="3dF-P2-DHj" firstAttribute="leading" secondItem="73Y-wV-JSw" secondAttribute="trailing" constant="11" id="hHD-Uk-hVE"/>
+                            <constraint firstItem="Hjw-5a-SGL" firstAttribute="leading" secondItem="MWa-Ta-nH8" secondAttribute="leading" id="hQo-Rn-cXx"/>
                             <constraint firstItem="e7b-N2-dsh" firstAttribute="centerX" secondItem="LfT-6l-4dD" secondAttribute="centerX" id="leZ-uO-mmh"/>
+                            <constraint firstItem="Hjw-5a-SGL" firstAttribute="bottom" secondItem="GY4-C6-VUc" secondAttribute="top" id="sYu-4K-BBv"/>
                             <constraint firstItem="AsB-38-JnB" firstAttribute="trailing" secondItem="MWa-Ta-nH8" secondAttribute="trailing" id="sn9-bB-YHz"/>
                             <constraint firstItem="yBe-iL-DGK" firstAttribute="top" secondItem="z3p-oZ-8ur" secondAttribute="top" id="uf7-gc-VGw"/>
                             <constraint firstItem="GY4-C6-VUc" firstAttribute="top" secondItem="Xqz-nv-7lm" secondAttribute="bottom" constant="8" id="vVD-3z-4PQ"/>
@@ -239,6 +269,7 @@
                         <outlet property="_acceptInviteDurationLabel" destination="3dF-P2-DHj" id="3Sy-5G-FuY"/>
                         <outlet property="_acceptInviteDurationTitleLabel" destination="73Y-wV-JSw" id="2GS-ao-xwq"/>
                         <outlet property="_acceptInviteTopView" destination="SRr-bA-1Me" id="JYi-6i-tjl"/>
+                        <outlet property="_collectionView" destination="Hjw-5a-SGL" id="b9X-I9-ydS"/>
                         <outlet property="_declineInviteButton" destination="Aoi-nD-E27" id="5ee-gL-PQF"/>
                         <outlet property="_distanseLabel" destination="z3p-oZ-8ur" id="se5-9p-737"/>
                         <outlet property="_distanseSlider" destination="yBe-iL-DGK" id="C8E-CO-WMm"/>
@@ -754,6 +785,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="icon-friendinrange" width="700" height="700"/>
         <image name="icon-goldbitcoin" width="700" height="700"/>
         <image name="pin-merchant" width="1024" height="1024"/>
         <image name="second" width="30" height="30"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D496A441E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D496A431E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift */; };
 		4D6DE0DA1E2B141D00682F62 /* BTFacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DE0D91E2B141D00682F62 /* BTFacebookLoginViewController.swift */; };
 		4D84472C1E2ABDCD00606949 /* BTGameMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */; };
 		4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */; };
@@ -52,6 +53,7 @@
 		070836BE68553360CED27E4C /* Pods-BitTag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTag.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTag/Pods-BitTag.release.xcconfig"; sourceTree = "<group>"; };
 		3355482E580149DE58AEBBC2 /* Pods_BitTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB542108308541B411C0AB3 /* Pods-BitTagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTagTests/Pods-BitTagTests.release.xcconfig"; sourceTree = "<group>"; };
+		4D496A431E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTFriendsInRangeCollectionViewCell.swift; path = Views/Cells/BTFriendsInRangeCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D6DE0D91E2B141D00682F62 /* BTFacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTFacebookLoginViewController.swift; path = ViewControllers/LoginViewControllers/BTFacebookLoginViewController.swift; sourceTree = "<group>"; };
 		4D8447251E2AA19600606949 /* BitTag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitTag-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTGameMapViewController.swift; path = ViewControllers/BTGameMapViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */,
 				4DC91A861E2B8A49004CB018 /* BTInvitedUsersCell.swift */,
+				4D496A431E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 			files = (
 				4DC91A871E2B8A49004CB018 /* BTInvitedUsersCell.swift in Sources */,
 				4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */,
+				4D496A441E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift in Sources */,
 				883C58C81E2AD6F70062957F /* BTInitialNavigationController.swift in Sources */,
 				883C58C61E2AD6990062957F /* BTTabBarViewController.swift in Sources */,
 				881C037C1E2B48C800161B94 /* PushNotificationManager.swift in Sources */,

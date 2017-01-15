@@ -20,6 +20,10 @@ class BTCreateGameViewController: UIViewController {
     }
     
     @IBAction func _startButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
+        controller._gameView = true
+        navigationController?.setViewControllers([controller], animated: true)
     }
 }
 

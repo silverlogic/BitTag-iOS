@@ -26,6 +26,7 @@ class BTGameMapViewController: UIViewController {
     @IBOutlet weak var _acceptInviteBuyInLabel: UILabel!
     @IBOutlet weak var _acceptInviteDurationLabel: UILabel!
     @IBOutlet fileprivate weak var _acceptInviteDurationTitleLabel: UILabel!
+    @IBOutlet weak var _collectionView: UICollectionView!
    
     
     // MARK: - Private properties
@@ -34,6 +35,7 @@ class BTGameMapViewController: UIViewController {
     fileprivate var _circleOverlay: MKCircle?
     fileprivate var _currentDistanse: Float = 3.0
     var _acceptingInvitationView: Bool! = false
+    var _gameView: Bool! = false
 
     
     // MARK: - IBActions
@@ -52,6 +54,10 @@ class BTGameMapViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction fileprivate func acceptInviteTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
+        controller._gameView = true
+        navigationController?.setViewControllers([controller], animated: true)
     }
     
     // MARK: - Lifecycle
@@ -93,6 +99,21 @@ extension BTGameMapViewController {
             _distanseSlider.isHidden = true
             _gameRadiusTitleLabel.isHidden = true
             _transparentView.isHidden = true
+            _collectionView.isHidden = true
+        } else if _gameView == true {
+            navigationItem.title = "New Game"
+            _startButton.isHidden = true
+            _distanseLabel.isHidden = true
+            _distanseSlider.isHidden = true
+            _gameRadiusTitleLabel.isHidden = true
+            _transparentView.isHidden = true
+            _acceptInviteButton.isHidden = true
+            _declineInviteButton.isHidden = true
+            _acceptInviteTopView.isHidden = true
+            _acceptInviteBuyInLabel.isHidden = true
+            _acceptInviteDurationLabel.isHidden = true
+            _acceptInviteBuyInTitleLabel.isHidden = true
+            _acceptInviteDurationTitleLabel.isHidden = true
         } else {
             let bittagLogo = UIImageView(image: #imageLiteral(resourceName: "BitTag_Logo_40px_Boxed"))
             navigationItem.titleView = bittagLogo
@@ -112,12 +133,12 @@ extension BTGameMapViewController {
             
             _acceptInviteButton.isHidden = true
             _declineInviteButton.isHidden = true
-            
             _acceptInviteTopView.isHidden = true
             _acceptInviteBuyInLabel.isHidden = true
             _acceptInviteDurationLabel.isHidden = true
             _acceptInviteBuyInTitleLabel.isHidden = true
             _acceptInviteDurationTitleLabel.isHidden = true
+            _collectionView.isHidden = true
         }
         updateDistanseLabel()
         drawGameArea()
@@ -160,6 +181,10 @@ extension BTGameMapViewController {
     
     @objc fileprivate func gameCenterSelected(gestureReconizer: UITapGestureRecognizer) {
         if _acceptingInvitationView == true {
+            return
+        }
+        if _gameView == true {
+            // @TODO: Here we should tap on user icon to tag him
             return
         }
         let point = gestureReconizer.location(in: _gameMapKitView)
@@ -268,3 +293,27 @@ extension BTGameMapViewController: CLLocationManagerDelegate {
         print("Failed to initialize GPS: ", error.localizedDescription)
     }
 }
+
+
+// MARK: - UICollectionViewDelegate
+extension BTGameMapViewController: UICollectionViewDelegate {
+}
+
+
+// MARK: - UICollectionViewDataSource
+extension BTGameMapViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = _collectionView.dequeueReusableCell(withReuseIdentifier: "BTFriendsInRangeCollectionViewCell", for: indexPath)
+        return cell
+    }
+}
+
