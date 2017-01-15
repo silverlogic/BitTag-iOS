@@ -159,10 +159,10 @@ extension BTGameMapViewController {
             _acceptInviteBuyInTitleLabel.isHidden = true
             _acceptInviteDurationTitleLabel.isHidden = true
             let participant = participants.filter({ $0.userId == AuthenticationManager.shared.userId }).first
-            bluetooth = BluetoothDiscover(identifier: (participant?.participantId.stringValue)!)
-            bluetooth.bluetoothUsersInAppUpdated = {
-                self._collectionView.reloadData()
-            }
+//            bluetooth = BluetoothDiscover(identifier: (participant?.participantId.stringValue)!)
+//            bluetooth.bluetoothUsersInAppUpdated = {
+//                self._collectionView.reloadData()
+//            }
         } else {
             let bittagLogo = UIImageView(image: #imageLiteral(resourceName: "BitTag_Logo_40px_Boxed"))
             navigationItem.titleView = bittagLogo
@@ -394,8 +394,8 @@ extension BTGameMapViewController: UICollectionViewDataSource {
         guard let cell = _collectionView.dequeueReusableCell(withReuseIdentifier: "BTFriendsInRangeCollectionViewCell", for: indexPath) as? BTFriendsInRangeCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let username = bluetooth.inAppBluetoothUserWithIndex(indexPath.item)
-        cell.bluetoothImage.isHidden = participants.contains(where: { $0.participantId.stringValue != username })
+//        let username = bluetooth.inAppBluetoothUserWithIndex(indexPath.item)
+//        cell.bluetoothImage.isHidden = participants.contains(where: { $0.participantId.stringValue != username })
         return cell
     }
 }
