@@ -200,6 +200,7 @@ extension BTGameMapViewController {
             controller._acceptingInvitationView = true
             controller._gameStartAnnotation = self._gameStartAnnotation
             controller._participant = participants.first
+            controller.participants = participants
             self.navigationController?.pushViewController(controller, animated: true)
         }) { (error: Error?) in
             //

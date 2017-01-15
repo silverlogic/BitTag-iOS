@@ -45,6 +45,8 @@ class BTCreateGameViewController: UIViewController {
             guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
             controller._gameView = true
             controller._currentGame = self.createdGame
+            controller.participants = self.participants
+            SVProgressHUD.dismiss()
             self.navigationController?.setViewControllers([controller], animated: true)
         }) { (error: Error?) in
         }
