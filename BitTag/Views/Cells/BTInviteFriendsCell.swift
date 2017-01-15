@@ -15,22 +15,15 @@ class BTInviteFriendsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        _imageView.layer.cornerRadius = 25.0
+        _imageView.layer.cornerRadius = 28.0
         _imageView.layer.borderColor = UIColor.black.cgColor
         _imageView.layer.borderWidth = 0.8
         _nameLabel.layer.cornerRadius = 20.0
         _nameLabel.layer.borderColor = UIColor.black.cgColor
         _nameLabel.layer.borderWidth = 0.8
         clearCell()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         clearCell()
