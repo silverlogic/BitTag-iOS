@@ -9,11 +9,7 @@ target 'BitTag' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
   pod 'RestKit', '~> 0.27'
-
-  target 'BitTagTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'SVProgressHUD', '2.1.2'
   
   # avoids issues with objc_msgSend
   post_install do |installer|
@@ -23,6 +19,11 @@ target 'BitTag' do
               config.build_settings['SWIFT_VERSION'] = '3.0'
           end
       end
+  end
+
+  target 'BitTagTests' do
+    inherit! :search_paths
+    # Pods for testing
   end
 
 end

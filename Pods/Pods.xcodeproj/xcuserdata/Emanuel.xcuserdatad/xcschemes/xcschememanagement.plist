@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,17 +62,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0618FB6BBFD593459A033D1827A88A5E</key>
+		<key>15C910B76499C23E7B746DEC807FA6FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2DC6AE5C167301D1770794CE8CAE4F9A</key>
+		<key>40A415204FE18966E791F9407194179F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C35A772AD214240862EDD96F5740629</key>
+		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E017BABB1FB7E76955E6049DDBDCD1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BC5000D645EEAF961C85907CDC796FE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BEF7E6E85DB5CDE5D7A18F4F2EB8494B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C08FC82841875585B9E37C925313DDDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C6141264202336CA564338084E416826</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C65E243453894C24172DEA5868965768</key>
+		<key>E427BACA2D5539A69FBBF42CBA0FDE34</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -11,11 +11,12 @@ import Foundation
 final class BTUser: NSObject {
     
     // MARK: - Attributes
-    fileprivate var _userId: NSNumber!
-    fileprivate var _avatarUrl: NSURL!
-    fileprivate var _firstName: NSString!
-    fileprivate var _lastName: NSString!
-    fileprivate var _token: NSString!
+    fileprivate var _userId = 0 as NSNumber
+    fileprivate var _avatarUrl: NSURL?
+    fileprivate var _firstName = "" as NSString
+    fileprivate var _lastName = "" as NSString
+    fileprivate var _token = "" as NSString
+    fileprivate var _facebookAccessToken = "" as NSString
 }
 
 
@@ -30,7 +31,7 @@ extension BTUser {
         }
     }
     
-    var avatarUrl: NSURL {
+    var avatarUrl: NSURL? {
         get {
             return _avatarUrl
         }
@@ -66,6 +67,15 @@ extension BTUser {
             UserDefaults.standard.set(_token, forKey: "token")
         }
     }
+    
+    var facebookAccessToken: NSString {
+        get {
+            return _facebookAccessToken
+        }
+        set {
+            _facebookAccessToken = newValue
+        }
+    }
 }
 
 
@@ -74,9 +84,10 @@ extension BTUser {
     class func fieldMappings() -> [String:String] {
         return ["id":"userId",
                 "avatar.full_size":"avatarUrl",
-                "first_name":"first_name",
-                "last_name":"last_name",
-                "token":"token"]
+                "first_name":"firstName",
+                "last_name":"lastName",
+                "token":"token",
+                "access_token":"facebookAccessToken"]
     }
     
     class func getToken() -> NSString {

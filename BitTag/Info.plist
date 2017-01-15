@@ -47,14 +47,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1833698466910975</string>
+				<string>fb556441411192933</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>1833698466910975</string>
+	<string>556441411192933</string>
 	<key>FacebookDisplayName</key>
-	<string>com.silverlogic.BitTag</string>
+	<string>BitTag</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -64,5 +64,10 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>{human-readable reason for photo access}</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

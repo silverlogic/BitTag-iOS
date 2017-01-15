@@ -1,0 +1,10 @@
+/* 
+  Localizations.strings
+  BitTag
+
+  Created by Emanuel  Guerrero on 1/14/17.
+  Copyright © 2017 SilverLogic, LLC. All rights reserved.
+*/
+
+// Miscellaneous
+"Miscellaneous.UnKnownError" = "Oh no, an unknown error has occured. 😞";
