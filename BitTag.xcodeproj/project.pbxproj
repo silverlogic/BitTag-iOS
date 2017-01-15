@@ -15,6 +15,9 @@
 		4DC91A811E2B2A4B004CB018 /* BTInviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */; };
 		4DC91A871E2B8A49004CB018 /* BTInvitedUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A861E2B8A49004CB018 /* BTInvitedUsersCell.swift */; };
 		4DC91A891E2B8CDC004CB018 /* BTCreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A881E2B8CDC004CB018 /* BTCreateGameViewController.swift */; };
+		4DD1712B1E2BB9BC0061C83E /* BTVictoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1712A1E2BB9BC0061C83E /* BTVictoryTableViewCell.swift */; };
+		4DD1712D1E2BB9F20061C83E /* BTVictoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1712C1E2BB9F20061C83E /* BTVictoryViewController.swift */; };
+		4DD1712F1E2BC2160061C83E /* BTInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1712E1E2BC2160061C83E /* BTInitialViewController.swift */; };
 		5DAF8D1210CAA6FB146DFBAE /* Pods_BitTagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */; };
 		881C037C1E2B48C800161B94 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C037B1E2B48C800161B94 /* PushNotificationManager.swift */; };
 		881C037F1E2B669B00161B94 /* BluetoothDiscover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C037E1E2B669B00161B94 /* BluetoothDiscover.swift */; };
@@ -24,7 +27,6 @@
 		883C58BE1E2A98550062957F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BD1E2A98550062957F /* APIClient.swift */; };
 		883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */; };
 		883C58C21E2AA9C30062957F /* BTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58C11E2AA9C30062957F /* BTUser.swift */; };
-		883C58C61E2AD6990062957F /* BTTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58C51E2AD6990062957F /* BTTabBarViewController.swift */; };
 		883C58C81E2AD6F70062957F /* BTInitialNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58C71E2AD6F70062957F /* BTInitialNavigationController.swift */; };
 		883C58CD1E2AE34B0062957F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58CC1E2AE34B0062957F /* AuthenticationManager.swift */; };
 		883C58D01E2AE9F90062957F /* Localizations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 883C58CF1E2AE9F90062957F /* Localizations.strings */; };
@@ -63,6 +65,9 @@
 		4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInviteFriendsViewController.swift; path = ViewControllers/BTInviteFriendsViewController.swift; sourceTree = "<group>"; };
 		4DC91A861E2B8A49004CB018 /* BTInvitedUsersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInvitedUsersCell.swift; path = Views/Cells/BTInvitedUsersCell.swift; sourceTree = "<group>"; };
 		4DC91A881E2B8CDC004CB018 /* BTCreateGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCreateGameViewController.swift; path = ViewControllers/BTCreateGameViewController.swift; sourceTree = "<group>"; };
+		4DD1712A1E2BB9BC0061C83E /* BTVictoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTVictoryTableViewCell.swift; path = Views/Cells/BTVictoryTableViewCell.swift; sourceTree = "<group>"; };
+		4DD1712C1E2BB9F20061C83E /* BTVictoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTVictoryViewController.swift; path = ViewControllers/BTVictoryViewController.swift; sourceTree = "<group>"; };
+		4DD1712E1E2BC2160061C83E /* BTInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInitialViewController.swift; path = ViewControllers/BTInitialViewController.swift; sourceTree = "<group>"; };
 		6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		881C037A1E2B3DC800161B94 /* BitTag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BitTag.entitlements; sourceTree = "<group>"; };
 		881C037B1E2B48C800161B94 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationManager.swift; path = ServiceClasses/Singletons/PushNotificationManager.swift; sourceTree = "<group>"; };
@@ -73,7 +78,6 @@
 		883C58BD1E2A98550062957F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ServiceClasses/Singletons/APIClient.swift; sourceTree = "<group>"; };
 		883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTExtendedError.swift; path = Models/BTExtendedError.swift; sourceTree = "<group>"; };
 		883C58C11E2AA9C30062957F /* BTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTUser.swift; path = Models/BTUser.swift; sourceTree = "<group>"; };
-		883C58C51E2AD6990062957F /* BTTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTTabBarViewController.swift; path = ViewControllers/TabBarController/BTTabBarViewController.swift; sourceTree = "<group>"; };
 		883C58C71E2AD6F70062957F /* BTInitialNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInitialNavigationController.swift; path = ViewControllers/BTInitialNavigationController.swift; sourceTree = "<group>"; };
 		883C58CC1E2AE34B0062957F /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationManager.swift; path = ServiceClasses/Singletons/AuthenticationManager.swift; sourceTree = "<group>"; };
 		883C58CF1E2AE9F90062957F /* Localizations.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizations.strings; path = Resources/Localizations/Localizations.strings; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */,
 				4DC91A861E2B8A49004CB018 /* BTInvitedUsersCell.swift */,
 				4D496A431E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift */,
+				4DD1712A1E2BB9BC0061C83E /* BTVictoryTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -163,7 +168,6 @@
 		883C58C41E2AD64C0062957F /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				883C58C51E2AD6990062957F /* BTTabBarViewController.swift */,
 			);
 			name = TabBarController;
 			sourceTree = "<group>";
@@ -264,6 +268,8 @@
 				4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */,
 				4DC91A881E2B8CDC004CB018 /* BTCreateGameViewController.swift */,
 				4D496A451E2BA6EB00874C00 /* BTTagViewController.swift */,
+				4DD1712C1E2BB9F20061C83E /* BTVictoryViewController.swift */,
+				4DD1712E1E2BC2160061C83E /* BTInitialViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -528,10 +534,10 @@
 				4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */,
 				4D496A441E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift in Sources */,
 				883C58C81E2AD6F70062957F /* BTInitialNavigationController.swift in Sources */,
-				883C58C61E2AD6990062957F /* BTTabBarViewController.swift in Sources */,
 				881C037C1E2B48C800161B94 /* PushNotificationManager.swift in Sources */,
 				881C03811E2B779800161B94 /* BTParticipant.swift in Sources */,
 				883C58C21E2AA9C30062957F /* BTUser.swift in Sources */,
+				4DD1712D1E2BB9F20061C83E /* BTVictoryViewController.swift in Sources */,
 				883C58CD1E2AE34B0062957F /* AuthenticationManager.swift in Sources */,
 				881C03831E2B85D000161B94 /* ParticipantsManager.swift in Sources */,
 				88FD8D9B1E2A85CF0096E5EB /* SecondViewController.swift in Sources */,
@@ -540,6 +546,7 @@
 				88FD8D971E2A85CF0096E5EB /* AppDelegate.swift in Sources */,
 				4D496A461E2BA6EB00874C00 /* BTTagViewController.swift in Sources */,
 				4DC91A891E2B8CDC004CB018 /* BTCreateGameViewController.swift in Sources */,
+				4DD1712B1E2BB9BC0061C83E /* BTVictoryTableViewCell.swift in Sources */,
 				4D84472C1E2ABDCD00606949 /* BTGameMapViewController.swift in Sources */,
 				88FD8D991E2A85CF0096E5EB /* FirstViewController.swift in Sources */,
 				4DC91A811E2B2A4B004CB018 /* BTInviteFriendsViewController.swift in Sources */,
@@ -547,6 +554,7 @@
 				883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */,
 				4D6DE0DA1E2B141D00682F62 /* BTFacebookLoginViewController.swift in Sources */,
 				883C58BE1E2A98550062957F /* APIClient.swift in Sources */,
+				4DD1712F1E2BC2160061C83E /* BTInitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

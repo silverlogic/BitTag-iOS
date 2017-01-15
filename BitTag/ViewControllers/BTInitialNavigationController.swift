@@ -48,7 +48,7 @@ extension BTInitialNavigationController {
     
     fileprivate func showTabBarController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "BTTabBarViewController") as? BTTabBarViewController else { return }
+        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "BTInitialViewController") as? BTInitialViewController else { return }
         tabBarController.userLoggedOutClosure = {
             self.showFacebookLoginViewController()
         }

@@ -1,14 +1,14 @@
 //
-//  BTTabBarViewController.swift
+//  BTInitialViewController.swift
 //  BitTag
 //
-//  Created by Emanuel  Guerrero on 1/14/17.
+//  Created by Vasilii Muravev on 1/15/17.
 //  Copyright © 2017 SilverLogic, LLC. All rights reserved.
 //
 
 import UIKit
 
-final class BTTabBarViewController: UITabBarController {
+final class BTInitialViewController: UIViewController {
     
     // MARK: - Attributes
     var userLoggedOutClosure: (() -> Void)?
@@ -16,10 +16,11 @@ final class BTTabBarViewController: UITabBarController {
 
 
 // MARK: - Lifecycle
-extension BTTabBarViewController {
+extension BTInitialViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(logoutUser), name: .Logout, object: nil)
+        performSegue(withIdentifier: "gotoApplication", sender: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -32,9 +33,10 @@ extension BTTabBarViewController {
 
 
 // MARK: - Private Instance Methods
-extension BTTabBarViewController {
+extension BTInitialViewController {
     @objc fileprivate func logoutUser() {
         guard let closure = userLoggedOutClosure else { return }
         closure()
     }
 }
+
