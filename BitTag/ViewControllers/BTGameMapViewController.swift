@@ -76,6 +76,8 @@ class GameCenterPointAnnotation: MKPointAnnotation {
 }
 class BitstopPointAnnotation: MKPointAnnotation {
 }
+class PlayerPointAnnotation: MKPointAnnotation {
+}
 
 
 // MARK: - Private Instanse Methods
@@ -225,6 +227,12 @@ extension BTGameMapViewController {
         _gameMapKitView.addAnnotation(annotation)
     }
     
+    fileprivate func addPlayerAnnotation(_ location:CLLocationCoordinate2D) {
+        let annotation = PlayerPointAnnotation()
+        annotation.coordinate = location
+        _gameMapKitView.addAnnotation(annotation)
+    }
+    
     fileprivate func resizedPinIcon(_ image: UIImage) -> UIImage? {
         let size = CGSize(width: 100.0, height: 100.0)
         UIGraphicsBeginImageContext(size)
@@ -260,8 +268,19 @@ extension BTGameMapViewController: MKMapViewDelegate {
             let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "bitstopAnnotation")
             annotationView.image = resizedPinIcon(#imageLiteral(resourceName: "pin-bitstop"))
             return annotationView
+        } else if annotation is PlayerPointAnnotation {
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "playerAnnotation")
+            annotationView.image = resizedPinIcon(#imageLiteral(resourceName: "pin-gamecenter"))
+            return annotationView
         }
         return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation else { return }
+        if annotation is PlayerPointAnnotation {
+            performSegue(withIdentifier: "gotoTagViewController", sender: self)
+        }
     }
 }
 

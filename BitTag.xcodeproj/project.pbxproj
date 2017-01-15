@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D496A441E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D496A431E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift */; };
+		4D496A461E2BA6EB00874C00 /* BTTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D496A451E2BA6EB00874C00 /* BTTagViewController.swift */; };
 		4D6DE0DA1E2B141D00682F62 /* BTFacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DE0D91E2B141D00682F62 /* BTFacebookLoginViewController.swift */; };
 		4D84472C1E2ABDCD00606949 /* BTGameMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */; };
 		4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */; };
@@ -54,6 +55,7 @@
 		3355482E580149DE58AEBBC2 /* Pods_BitTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB542108308541B411C0AB3 /* Pods-BitTagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTagTests/Pods-BitTagTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D496A431E2B97B900874C00 /* BTFriendsInRangeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTFriendsInRangeCollectionViewCell.swift; path = Views/Cells/BTFriendsInRangeCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D496A451E2BA6EB00874C00 /* BTTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTTagViewController.swift; path = ViewControllers/BTTagViewController.swift; sourceTree = "<group>"; };
 		4D6DE0D91E2B141D00682F62 /* BTFacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTFacebookLoginViewController.swift; path = ViewControllers/LoginViewControllers/BTFacebookLoginViewController.swift; sourceTree = "<group>"; };
 		4D8447251E2AA19600606949 /* BitTag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitTag-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTGameMapViewController.swift; path = ViewControllers/BTGameMapViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */,
 				4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */,
 				4DC91A881E2B8CDC004CB018 /* BTCreateGameViewController.swift */,
+				4D496A451E2BA6EB00874C00 /* BTTagViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				881C03871E2B889A00161B94 /* BTGame.swift in Sources */,
 				881C037F1E2B669B00161B94 /* BluetoothDiscover.swift in Sources */,
 				88FD8D971E2A85CF0096E5EB /* AppDelegate.swift in Sources */,
+				4D496A461E2BA6EB00874C00 /* BTTagViewController.swift in Sources */,
 				4DC91A891E2B8CDC004CB018 /* BTCreateGameViewController.swift in Sources */,
 				4D84472C1E2ABDCD00606949 /* BTGameMapViewController.swift in Sources */,
 				88FD8D991E2A85CF0096E5EB /* FirstViewController.swift in Sources */,

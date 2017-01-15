@@ -277,11 +277,81 @@
                         <outlet property="_gameRadiusTitleLabel" destination="LfT-6l-4dD" id="aX4-p9-X2f"/>
                         <outlet property="_startButton" destination="e7b-N2-dsh" id="vHJ-hk-z48"/>
                         <outlet property="_transparentView" destination="MWa-Ta-nH8" id="pfd-IM-Y0u"/>
+                        <segue destination="BU1-Zl-7YP" kind="show" identifier="gotoTagViewController" id="dqJ-1C-yFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="El4-EY-OMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3919.1999999999998" y="-109.29535232383809"/>
+        </scene>
+        <!--Tag!-->
+        <scene sceneID="p1p-Gx-m9K">
+            <objects>
+                <viewController id="BU1-Zl-7YP" customClass="BTTagViewController" customModule="BitTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="br2-1c-KQC"/>
+                        <viewControllerLayoutGuide type="bottom" id="MFY-7Y-buf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jKN-Vb-zEL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fade_You_Are_Tagged" translatesAutoresizingMaskIntoConstraints="NO" id="KT9-q3-Lr0">
+                                <rect key="frame" x="97" y="281" width="180" height="282"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1K5-g9-qvb">
+                                <rect key="frame" x="97" y="105" width="180" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1K5-g9-qvb" secondAttribute="height" multiplier="1:1" id="z4E-xr-MKS"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Target_You_Are_Tagged" translatesAutoresizingMaskIntoConstraints="NO" id="krc-XS-cfU">
+                                <rect key="frame" x="62" y="72" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="krc-XS-cfU" secondAttribute="height" multiplier="1:1" id="OBJ-K9-TrX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-Hk-sKN">
+                                <rect key="frame" x="87" y="571" width="201" height="39"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.36470588240000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="9Qk-F7-7HZ"/>
+                                </constraints>
+                                <state key="normal" title="TAG!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tagButtonTapped:" destination="BU1-Zl-7YP" eventType="touchUpInside" id="rxh-sC-yEa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="krc-XS-cfU" firstAttribute="centerX" secondItem="1K5-g9-qvb" secondAttribute="centerX" id="3kd-QR-ER3"/>
+                            <constraint firstItem="1K5-g9-qvb" firstAttribute="trailing" secondItem="KT9-q3-Lr0" secondAttribute="trailing" id="5XF-ag-es8"/>
+                            <constraint firstItem="xgC-Hk-sKN" firstAttribute="leading" secondItem="jKN-Vb-zEL" secondAttribute="leadingMargin" constant="71" id="BLI-Ny-Bbd"/>
+                            <constraint firstItem="KT9-q3-Lr0" firstAttribute="top" secondItem="br2-1c-KQC" secondAttribute="bottom" constant="217" id="JBc-AY-igF"/>
+                            <constraint firstItem="krc-XS-cfU" firstAttribute="top" secondItem="br2-1c-KQC" secondAttribute="bottom" constant="8" symbolic="YES" id="OTZ-pr-iTc"/>
+                            <constraint firstItem="1K5-g9-qvb" firstAttribute="top" secondItem="br2-1c-KQC" secondAttribute="bottom" constant="41" id="Z5b-8k-1Ni"/>
+                            <constraint firstItem="1K5-g9-qvb" firstAttribute="leading" secondItem="KT9-q3-Lr0" secondAttribute="leading" id="f4A-CZ-Ilx"/>
+                            <constraint firstItem="MFY-7Y-buf" firstAttribute="top" secondItem="xgC-Hk-sKN" secondAttribute="bottom" constant="8" symbolic="YES" id="kb7-uB-1LY"/>
+                            <constraint firstItem="krc-XS-cfU" firstAttribute="leading" secondItem="jKN-Vb-zEL" secondAttribute="leadingMargin" constant="46" id="mtP-nJ-HKq"/>
+                            <constraint firstItem="krc-XS-cfU" firstAttribute="centerX" secondItem="jKN-Vb-zEL" secondAttribute="centerX" id="pQ3-7W-jKA"/>
+                            <constraint firstItem="1K5-g9-qvb" firstAttribute="leading" secondItem="jKN-Vb-zEL" secondAttribute="leadingMargin" constant="81" id="q8K-zp-56b"/>
+                            <constraint firstItem="xgC-Hk-sKN" firstAttribute="top" secondItem="KT9-q3-Lr0" secondAttribute="bottom" constant="8" symbolic="YES" id="qVf-tl-wbp"/>
+                            <constraint firstItem="KT9-q3-Lr0" firstAttribute="centerX" secondItem="xgC-Hk-sKN" secondAttribute="centerX" id="s4A-iB-iis"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tag!" id="CtP-Hr-KXS"/>
+                    <connections>
+                        <outlet property="_imageView" destination="1K5-g9-qvb" id="NjT-Oi-7og"/>
+                        <outlet property="_tagButton" destination="xgC-Hk-sKN" id="oyi-RS-Qop"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5V-IW-FZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3917.5999999999999" y="684.10794602698661"/>
         </scene>
         <!--Invite Friends-->
         <scene sceneID="BeK-2c-nyt">
@@ -784,6 +854,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fade_You_Are_Tagged" width="700" height="900"/>
+        <image name="Target_You_Are_Tagged" width="700" height="700"/>
         <image name="first" width="30" height="30"/>
         <image name="icon-friendinrange" width="700" height="700"/>
         <image name="icon-goldbitcoin" width="700" height="700"/>
