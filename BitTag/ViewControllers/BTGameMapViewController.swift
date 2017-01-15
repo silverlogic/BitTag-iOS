@@ -37,7 +37,10 @@ class BTGameMapViewController: UIViewController {
     fileprivate var _currentDistanse: Float = 3.0
     var _acceptingInvitationView: Bool! = false
     var _gameView: Bool! = false
+    var _currentGame: BTGame!
     var _participant: BTParticipant?
+    var bluetooth: BluetoothDiscover!
+    var participants = [BTParticipant]()
 
     
     // MARK: - IBActions
@@ -73,6 +76,9 @@ class BTGameMapViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: .ParticipantTagged, object: nil)
+        _collectionView.dataSource = self
+        _collectionView.delegate = self
         setupSubviews()
         setupMap()
     }
@@ -81,6 +87,14 @@ class BTGameMapViewController: UIViewController {
         guard let inviteFriendsViewController = segue.destination as? BTInviteFriendsViewController else { return }
         inviteFriendsViewController.radius = _currentDistanse
         inviteFriendsViewController.centerPoint = _gameStartAnnotation?.coordinate
+    }
+    
+    func updateCollectionView() {
+        ParticipantsManager.shared.loadAvaliableParticipates(gameId: _currentGame.gameId, userId: nil, status: "joined", success: { (participants: [BTParticipant]) in
+            self.participants = participants
+            self._collectionView.reloadData()
+        }) { (error: Error?) in
+        }
     }
 }
 
@@ -132,6 +146,11 @@ extension BTGameMapViewController {
             _acceptInviteDurationLabel.isHidden = true
             _acceptInviteBuyInTitleLabel.isHidden = true
             _acceptInviteDurationTitleLabel.isHidden = true
+            let participant = participants.filter({ $0.userId == AuthenticationManager.shared.userId }).first
+            bluetooth = BluetoothDiscover(identifier: (participant?.participantId.stringValue)!)
+            bluetooth.bluetoothUsersInAppUpdated = {
+                self._collectionView.reloadData()
+            }
         } else {
             let bittagLogo = UIImageView(image: #imageLiteral(resourceName: "BitTag_Logo_40px_Boxed"))
             navigationItem.titleView = bittagLogo
@@ -337,6 +356,14 @@ extension BTGameMapViewController: CLLocationManagerDelegate {
 
 // MARK: - UICollectionViewDelegate
 extension BTGameMapViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let participant = participants[indexPath.item]
+        APIClient.shared.postParticipantGettingTagged(participant: participant, success: { 
+            
+        }) { (error: Error?) in
+            
+        }
+    }
 }
 
 
@@ -348,11 +375,15 @@ extension BTGameMapViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return participants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = _collectionView.dequeueReusableCell(withReuseIdentifier: "BTFriendsInRangeCollectionViewCell", for: indexPath)
+        guard let cell = _collectionView.dequeueReusableCell(withReuseIdentifier: "BTFriendsInRangeCollectionViewCell", for: indexPath) as? BTFriendsInRangeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let username = bluetooth.inAppBluetoothUserWithIndex(indexPath.item)
+        cell.bluetoothImage.isHidden = participants.contains(where: { $0.participantId.stringValue != username })
         return cell
     }
 }

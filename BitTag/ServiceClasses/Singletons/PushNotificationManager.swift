@@ -46,7 +46,7 @@ extension PushNotificationManager {
                 // @TODO: Handle once game logic implemented
             break
             case "participant_tagged":
-                // @TODO: Handle sending notification to update map
+                NotificationCenter.default.post(name: .ParticipantTagged, object: nil)
             break
             case "game_ended":
                 // @TODO: Handle sending notification to update map

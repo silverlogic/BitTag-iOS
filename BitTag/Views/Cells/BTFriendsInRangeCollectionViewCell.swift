@@ -11,6 +11,7 @@ import UIKit
 class BTFriendsInRangeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var _imageView: UIImageView!
+    @IBOutlet weak var bluetoothImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FL0-Hn-QF8">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FL0-Hn-QF8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -369,13 +369,10 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="_imageView" destination="bKR-oZ-PLA" id="Ybi-AL-YKS"/>
+                                            <outlet property="bluetoothImage" destination="A2P-Cc-Pdd" id="oUa-Yy-UJS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="vAX-aR-2nh" id="94F-zl-q3r"/>
-                                    <outlet property="delegate" destination="vAX-aR-2nh" id="eFO-Pw-ZGM"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
