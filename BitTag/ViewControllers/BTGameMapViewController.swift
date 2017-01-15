@@ -61,10 +61,22 @@ class BTGameMapViewController: UIViewController {
     @IBAction fileprivate func acceptInviteTapped(_ sender: UIButton) {
         guard let participant = _participant else { return; }
         ParticipantsManager.shared.participantBuysIn(participant: participant, success: {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
-            controller._gameView = true
-            self.navigationController?.setViewControllers([controller], animated: true)
+            ParticipantsManager.shared.loadAvaliableParticipates(gameId: nil, userId: AuthenticationManager.shared.userId, status: "joined", success: { (participants: [BTParticipant]) in
+                APIClient.shared.getGames(success: { (games: [BTGame]) in
+                    let game = games.first
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
+                    controller._gameView = true
+                    controller.participants = participants
+                    controller._currentGame = game
+                    self.navigationController?.setViewControllers([controller], animated: true)
+                }, failure: { (error: Error?) in
+                    //
+                })
+            }, failure: { (error: Error?) in
+                //
+            })
+
         }) { (error: Error?) in
             DispatchQueue.main.async {
                 SVProgressHUD.showError(withStatus: error?.localizedDescription ?? NSLocalizedString("Miscellaneous.UnKnownError", comment: "unknown error"))
