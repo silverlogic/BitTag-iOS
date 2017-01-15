@@ -46,11 +46,23 @@
                     <view key="view" contentMode="scaleToFill" id="MWO-5S-L5t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook_Login_Screen" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-pp-b1J">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KYu-G8-mQP" firstAttribute="top" secondItem="7yk-pp-b1J" secondAttribute="bottom" id="QDQ-gb-gH3"/>
+                            <constraint firstItem="7yk-pp-b1J" firstAttribute="top" secondItem="BXW-D5-sI9" secondAttribute="bottom" constant="-20" id="hqI-Nn-bWL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7yk-pp-b1J" secondAttribute="trailing" constant="-16" id="j1K-aT-HhT"/>
+                            <constraint firstItem="7yk-pp-b1J" firstAttribute="leading" secondItem="MWO-5S-L5t" secondAttribute="leadingMargin" constant="-16" id="pmW-6Z-VyL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrn-FY-HKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="-1740"/>
+            <point key="canvasLocation" x="236" y="-1740.1799100449775"/>
         </scene>
         <!--Victory View Controller-->
         <scene sceneID="5RP-QS-Fe3">
@@ -880,6 +892,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Facebook_Login_Screen" width="1080" height="1920"/>
         <image name="Fade_You_Are_Tagged" width="700" height="900"/>
         <image name="Target_You_Are_Tagged" width="700" height="700"/>
         <image name="icon-friendinrange" width="700" height="700"/>
