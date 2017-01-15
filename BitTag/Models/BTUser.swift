@@ -17,6 +17,7 @@ final class BTUser: NSObject {
     fileprivate var _lastName = "" as NSString
     fileprivate var _token = "" as NSString
     fileprivate var _facebookAccessToken = "" as NSString
+    fileprivate var _apnsToken = "" as NSString
 }
 
 
@@ -76,6 +77,18 @@ extension BTUser {
             _facebookAccessToken = newValue
         }
     }
+
+    var apnsToken: NSString {
+        get {
+            guard let pushToken = UserDefaults.standard.value(forKey: "apnsToken") as? NSString else {
+                return ""
+            }
+            return pushToken
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "apnsToken")
+        }
+    }
 }
 
 
@@ -87,7 +100,8 @@ extension BTUser {
                 "first_name":"firstName",
                 "last_name":"lastName",
                 "token":"token",
-                "access_token":"facebookAccessToken"]
+                "access_token":"facebookAccessToken",
+                "apns_token":"apnsToken"]
     }
     
     class func getToken() -> NSString {

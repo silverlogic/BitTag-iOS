@@ -12,6 +12,7 @@
 		4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */; };
 		4DC91A811E2B2A4B004CB018 /* BTInviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */; };
 		5DAF8D1210CAA6FB146DFBAE /* Pods_BitTagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */; };
+		881C037C1E2B48C800161B94 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C037B1E2B48C800161B94 /* PushNotificationManager.swift */; };
 		883C58BE1E2A98550062957F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BD1E2A98550062957F /* APIClient.swift */; };
 		883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */; };
 		883C58C21E2AA9C30062957F /* BTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58C11E2AA9C30062957F /* BTUser.swift */; };
@@ -51,6 +52,8 @@
 		4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInviteFriendsCell.swift; path = Views/Cells/BTInviteFriendsCell.swift; sourceTree = "<group>"; };
 		4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInviteFriendsViewController.swift; path = ViewControllers/BTInviteFriendsViewController.swift; sourceTree = "<group>"; };
 		6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		881C037A1E2B3DC800161B94 /* BitTag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BitTag.entitlements; sourceTree = "<group>"; };
+		881C037B1E2B48C800161B94 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationManager.swift; path = ServiceClasses/Singletons/PushNotificationManager.swift; sourceTree = "<group>"; };
 		883C58BD1E2A98550062957F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ServiceClasses/Singletons/APIClient.swift; sourceTree = "<group>"; };
 		883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTExtendedError.swift; path = Models/BTExtendedError.swift; sourceTree = "<group>"; };
 		883C58C11E2AA9C30062957F /* BTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTUser.swift; path = Models/BTUser.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			children = (
 				883C58BD1E2A98550062957F /* APIClient.swift */,
 				883C58CC1E2AE34B0062957F /* AuthenticationManager.swift */,
+				881C037B1E2B48C800161B94 /* PushNotificationManager.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -176,6 +180,7 @@
 		88FD8D951E2A85CF0096E5EB /* BitTag */ = {
 			isa = PBXGroup;
 			children = (
+				881C037A1E2B3DC800161B94 /* BitTag.entitlements */,
 				88FD8D961E2A85CF0096E5EB /* AppDelegate.swift */,
 				88FD8D9F1E2A85CF0096E5EB /* Assets.xcassets */,
 				88FD8DA41E2A85CF0096E5EB /* Info.plist */,
@@ -332,6 +337,11 @@
 						DevelopmentTeam = 4SB3F2S2K3;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					88FD8DA81E2A85CF0096E5EB = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -482,6 +492,7 @@
 				4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */,
 				883C58C81E2AD6F70062957F /* BTInitialNavigationController.swift in Sources */,
 				883C58C61E2AD6990062957F /* BTTabBarViewController.swift in Sources */,
+				881C037C1E2B48C800161B94 /* PushNotificationManager.swift in Sources */,
 				883C58C21E2AA9C30062957F /* BTUser.swift in Sources */,
 				883C58CD1E2AE34B0062957F /* AuthenticationManager.swift in Sources */,
 				88FD8D9B1E2A85CF0096E5EB /* SecondViewController.swift in Sources */,
@@ -633,6 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BitTag/BitTag.entitlements;
 				DEVELOPMENT_TEAM = 4SB3F2S2K3;
 				INFOPLIST_FILE = BitTag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -651,6 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BitTag/BitTag.entitlements;
 				DEVELOPMENT_TEAM = 4SB3F2S2K3;
 				INFOPLIST_FILE = BitTag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

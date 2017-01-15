@@ -10,4 +10,7 @@ import Foundation
 
 extension Notification.Name {
     static let Logout = Notification.Name("Logout")
+    static let UpdateCurrentGame = Notification.Name("UpdateCurrentGame")
+    static let GameStarted = Notification.Name("GameStarted")
+    static let GameEnded = Notification.Name("GameEnded")
 }
