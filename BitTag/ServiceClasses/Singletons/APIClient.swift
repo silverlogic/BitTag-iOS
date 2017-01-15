@@ -169,7 +169,7 @@ extension APIClient {
     }
     
     func postParticipantJoiningGame(participant: BTParticipant, success: @escaping () -> Void, failure: @escaping (_ error: Error?) -> Void) {
-        RKObjectManager.shared().post(participant, path: RKPathFromPatternWithObject(_participantsJoinGameEndpoint, participant), parameters: nil, success: { (operation: RKObjectRequestOperation?, mappingResult: RKMappingResult?) in
+        RKObjectManager.shared().post(nil, path: RKPathFromPatternWithObject(_participantsJoinGameEndpoint, participant), parameters: nil, success: { (operation: RKObjectRequestOperation?, mappingResult: RKMappingResult?) in
             success()
         }) { (operation: RKObjectRequestOperation?, error: Error?) in
             failure(error!)

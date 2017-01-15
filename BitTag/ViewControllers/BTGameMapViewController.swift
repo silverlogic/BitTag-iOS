@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SVProgressHUD
 //import CoreLocation
 
 class BTGameMapViewController: UIViewController {
@@ -36,6 +37,7 @@ class BTGameMapViewController: UIViewController {
     fileprivate var _currentDistanse: Float = 3.0
     var _acceptingInvitationView: Bool! = false
     var _gameView: Bool! = false
+    var _participant: BTParticipant?
 
     
     // MARK: - IBActions
@@ -54,10 +56,18 @@ class BTGameMapViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     @IBAction fileprivate func acceptInviteTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
-        controller._gameView = true
-        navigationController?.setViewControllers([controller], animated: true)
+        guard let participant = _participant else { return; }
+        ParticipantsManager.shared.participantBuysIn(participant: participant, success: {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
+            controller._gameView = true
+            self.navigationController?.setViewControllers([controller], animated: true)
+        }) { (error: Error?) in
+            DispatchQueue.main.async {
+                SVProgressHUD.showError(withStatus: error?.localizedDescription ?? NSLocalizedString("Miscellaneous.UnKnownError", comment: "unknown error"))
+                SVProgressHUD.dismiss(withDelay: 2.0)
+            }
+        }
     }
     
     // MARK: - Lifecycle
@@ -153,11 +163,16 @@ extension BTGameMapViewController {
     }
     
     @objc fileprivate func acceptInvitation() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
-        controller._acceptingInvitationView = true
-        controller._gameStartAnnotation = _gameStartAnnotation
-        navigationController?.pushViewController(controller, animated: true)
+        ParticipantsManager.shared.loadAvaliableParticipates(gameId: nil, userId: AuthenticationManager.shared.userId, status: "invited", success: { (participants: [BTParticipant]) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
+            controller._acceptingInvitationView = true
+            controller._gameStartAnnotation = self._gameStartAnnotation
+            controller._participant = participants.first
+            self.navigationController?.pushViewController(controller, animated: true)
+        }) { (error: Error?) in
+            //
+        }
     }
     
     fileprivate func setupMap() {
