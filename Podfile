@@ -6,6 +6,7 @@ target 'BitTag' do
   use_frameworks!
 
   # Pods for BitTag
+  pod 'Discovery', '~> 1.0'
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
   pod 'RestKit', '~> 0.27'

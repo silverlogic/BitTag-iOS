@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Discovery (1.1.1)
   - FBSDKCoreKit (4.18.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.18.0):
@@ -35,6 +36,7 @@ PODS:
   - TransitionKit (2.2.1)
 
 DEPENDENCIES:
+  - Discovery (~> 1.0)
   - FBSDKCoreKit
   - FBSDKLoginKit
   - RestKit (~> 0.27)
@@ -42,6 +44,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Discovery: f6b2f8e06104e9b0ffd64b9db37d875cbed27e92
   FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
   FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
@@ -51,6 +54,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
 
-PODFILE CHECKSUM: bdf8957c3495480d112cc466f50ccde1ca8f0d4f
+PODFILE CHECKSUM: 83d25b767e38ed45f2f756f13f1ac26d902bcb14
 
 COCOAPODS: 1.2.0.beta.1

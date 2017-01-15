@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E427BACA2D5539A69FBBF42CBA0FDE34"
+               BlueprintIdentifier = "72FC82B745C586AD7E69EF60C87E09CE"
                BuildableName = "Pods_BitTag.framework"
                BlueprintName = "Pods-BitTag"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E427BACA2D5539A69FBBF42CBA0FDE34"
+            BlueprintIdentifier = "72FC82B745C586AD7E69EF60C87E09CE"
             BuildableName = "Pods_BitTag.framework"
             BlueprintName = "Pods-BitTag"
             ReferencedContainer = "container:Pods.xcodeproj">

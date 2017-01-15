@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Discovery.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,12 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>15C910B76499C23E7B746DEC807FA6FC</key>
+		<key>1B7236415E282CB02E2423B61BB699A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40A415204FE18966E791F9407194179F</key>
+		<key>3C7E7099AA979F55C71D69CB0BC77F3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +82,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E017BABB1FB7E76955E6049DDBDCD1B</key>
+		<key>5B0E9BAC0A00B8A51F1DA9E987CCE0FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B0E9BAC0A00B8A51F1DA9E987CCE0FE</key>
+		<key>61094A377484FD9E408DFEACBC0F4C8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>72FC82B745C586AD7E69EF60C87E09CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B31A0C80602ACC188167E2CCA21416D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C08FC82841875585B9E37C925313DDDE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C6141264202336CA564338084E416826</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E427BACA2D5539A69FBBF42CBA0FDE34</key>
+		<key>ED71FD88851B350F0EECFDDB2A122715</key>
 		<dict>
 			<key>primary</key>
 			<true/>
