@@ -17,19 +17,28 @@ class BTGameMapViewController: UIViewController {
     @IBOutlet fileprivate weak var _distanseSlider: UISlider!
     @IBOutlet fileprivate weak var _distanseLabel: UILabel!
     @IBOutlet fileprivate weak var _startButton: UIButton!
+    @IBOutlet fileprivate weak var _gameRadiusTitleLabel: UILabel!
+    @IBOutlet fileprivate weak var _transparentView: UIView!
+    @IBOutlet fileprivate weak var _declineInviteButton: UIButton!
+    @IBOutlet fileprivate weak var _acceptInviteButton: UIButton!
+    @IBOutlet fileprivate weak var _acceptInviteTopView: UIView!
+    @IBOutlet fileprivate weak var _acceptInviteBuyInTitleLabel: UILabel!
+    @IBOutlet weak var _acceptInviteBuyInLabel: UILabel!
+    @IBOutlet weak var _acceptInviteDurationLabel: UILabel!
+    @IBOutlet fileprivate weak var _acceptInviteDurationTitleLabel: UILabel!
    
     
     // MARK: - Private properties
     fileprivate var _locationManager: CLLocationManager?
-    fileprivate var _gameStartAnnotation: MKPointAnnotation?
+    var _gameStartAnnotation: MKPointAnnotation?
     fileprivate var _circleOverlay: MKCircle?
     fileprivate var _currentDistanse: Float = 3.0
+    var _acceptingInvitationView: Bool! = false
 
     
     // MARK: - IBActions
     @IBAction fileprivate func distanseSliderValueChanged(_ sender: UISlider) {
-        // @TODO: keep it smooth for now, later we can set 'step = 1' for distanse
-        _distanseSlider.value = round(_distanseSlider.value / 0.25) * 0.25
+        _distanseSlider.value = round(_distanseSlider.value / 0.1) * 0.1
         updateDistanseLabel()
         if _currentDistanse != _distanseSlider.value {
             _currentDistanse = _distanseSlider.value
@@ -39,18 +48,17 @@ class BTGameMapViewController: UIViewController {
     
     @IBAction fileprivate func startButtonTapped(_ sender: UIButton) {
     }
-    
+    @IBAction fileprivate func declineInviteTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction fileprivate func acceptInviteTapped(_ sender: UIButton) {
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
         setupMap()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
@@ -73,20 +81,54 @@ extension BTGameMapViewController {
         _distanseSlider.maximumValue = 5.0
         _distanseSlider.value = _currentDistanse
         _startButton.layer.cornerRadius = 20.0
+        _declineInviteButton.layer.borderColor = _acceptInviteButton.backgroundColor?.cgColor
+        _declineInviteButton.layer.borderWidth = 1.0
+        _declineInviteButton.layer.cornerRadius = 20.0
+        _acceptInviteButton.layer.cornerRadius = 20.0
         
-        let bittagLogo = UIImageView(image: #imageLiteral(resourceName: "BitTag_Logo_40px"))
-//        bittagLogo.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: 1, height: 1))
-//        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-//        titleview.addSubview(bittagLogo)
-        navigationItem.titleView = bittagLogo
-        
-        let qrcodeButton = UIButton(type: .custom)
-        qrcodeButton.setImage(#imageLiteral(resourceName: "icon-qrcode"), for: .normal)
-        qrcodeButton.frame = CGRect(x: 0.0, y: 0.0, width: 44.0, height: 44.0)
-        qrcodeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: qrcodeButton)
-        
+        if _acceptingInvitationView == true {
+            navigationItem.title = "Invitation"
+            _startButton.isHidden = true
+            _distanseLabel.isHidden = true
+            _distanseSlider.isHidden = true
+            _gameRadiusTitleLabel.isHidden = true
+            _transparentView.isHidden = true
+        } else {
+            let bittagLogo = UIImageView(image: #imageLiteral(resourceName: "BitTag_Logo_40px_Boxed"))
+            navigationItem.titleView = bittagLogo
+           
+            let qrcodeButton = UIButton(type: .custom)
+            qrcodeButton.setImage(#imageLiteral(resourceName: "icon-qrcode"), for: .normal)
+            qrcodeButton.frame = CGRect(x: 0.0, y: 0.0, width: 44.0, height: 44.0)
+            qrcodeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: qrcodeButton)
+            
+            let inviteAcceptButton = UIButton(type: .custom)
+            inviteAcceptButton.setImage(#imageLiteral(resourceName: "icon-invitation"), for: .normal)
+            inviteAcceptButton.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 32.0)
+            inviteAcceptButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+            inviteAcceptButton.addTarget(self, action: #selector(acceptInvitation), for: .touchUpInside)
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: inviteAcceptButton)
+            
+            _acceptInviteButton.isHidden = true
+            _declineInviteButton.isHidden = true
+            
+            _acceptInviteTopView.isHidden = true
+            _acceptInviteBuyInLabel.isHidden = true
+            _acceptInviteDurationLabel.isHidden = true
+            _acceptInviteBuyInTitleLabel.isHidden = true
+            _acceptInviteDurationTitleLabel.isHidden = true
+        }
         updateDistanseLabel()
+        drawGameArea()
+    }
+    
+    @objc fileprivate func acceptInvitation() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "BTGameMapViewController") as? BTGameMapViewController else { return }
+        controller._acceptingInvitationView = true
+        controller._gameStartAnnotation = _gameStartAnnotation
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     fileprivate func setupMap() {
@@ -117,6 +159,9 @@ extension BTGameMapViewController {
     }
     
     @objc fileprivate func gameCenterSelected(gestureReconizer: UITapGestureRecognizer) {
+        if _acceptingInvitationView == true {
+            return
+        }
         let point = gestureReconizer.location(in: _gameMapKitView)
         let location = _gameMapKitView.convert(point, toCoordinateFrom: _gameMapKitView)
         guard let _ = _gameStartAnnotation else {
@@ -171,9 +216,9 @@ extension BTGameMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let rendererView = MKCircleRenderer(overlay: overlay)
-        rendererView.fillColor = UIColor.red
-        rendererView.strokeColor = UIColor.red
-        rendererView.alpha = 0.1
+        rendererView.fillColor = _startButton.backgroundColor
+        rendererView.strokeColor = _startButton.backgroundColor
+        rendererView.alpha = 0.2
         return rendererView
     }
     
