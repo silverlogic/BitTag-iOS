@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D6DE0DA1E2B141D00682F62 /* BTFacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DE0D91E2B141D00682F62 /* BTFacebookLoginViewController.swift */; };
 		4D84472C1E2ABDCD00606949 /* BTGameMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */; };
+		4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */; };
+		4DC91A811E2B2A4B004CB018 /* BTInviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */; };
 		5DAF8D1210CAA6FB146DFBAE /* Pods_BitTagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */; };
 		883C58BE1E2A98550062957F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BD1E2A98550062957F /* APIClient.swift */; };
 		883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */; };
@@ -46,6 +48,8 @@
 		4D6DE0D91E2B141D00682F62 /* BTFacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTFacebookLoginViewController.swift; path = ViewControllers/LoginViewControllers/BTFacebookLoginViewController.swift; sourceTree = "<group>"; };
 		4D8447251E2AA19600606949 /* BitTag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitTag-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTGameMapViewController.swift; path = ViewControllers/BTGameMapViewController.swift; sourceTree = "<group>"; };
+		4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInviteFriendsCell.swift; path = Views/Cells/BTInviteFriendsCell.swift; sourceTree = "<group>"; };
+		4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTInviteFriendsViewController.swift; path = ViewControllers/BTInviteFriendsViewController.swift; sourceTree = "<group>"; };
 		6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		883C58BD1E2A98550062957F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ServiceClasses/Singletons/APIClient.swift; sourceTree = "<group>"; };
 		883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTExtendedError.swift; path = Models/BTExtendedError.swift; sourceTree = "<group>"; };
@@ -98,6 +102,14 @@
 				3AB542108308541B411C0AB3 /* Pods-BitTagTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4DC91A7F1E2B276F004CB018 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4DC91A7D1E2B276C004CB018 /* BTInviteFriendsCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		883C58BC1E2A983E0062957F /* Singletons */ = {
@@ -201,6 +213,7 @@
 		88FD8DB91E2A85FE0096E5EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4DC91A7F1E2B276F004CB018 /* Cells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -214,6 +227,7 @@
 				88FD8D981E2A85CF0096E5EB /* FirstViewController.swift */,
 				883C58C71E2AD6F70062957F /* BTInitialNavigationController.swift */,
 				4D84472B1E2ABDCD00606949 /* BTGameMapViewController.swift */,
+				4DC91A801E2B2A4B004CB018 /* BTInviteFriendsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -465,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC91A7E1E2B276C004CB018 /* BTInviteFriendsCell.swift in Sources */,
 				883C58C81E2AD6F70062957F /* BTInitialNavigationController.swift in Sources */,
 				883C58C61E2AD6990062957F /* BTTabBarViewController.swift in Sources */,
 				883C58C21E2AA9C30062957F /* BTUser.swift in Sources */,
@@ -473,6 +488,7 @@
 				88FD8D971E2A85CF0096E5EB /* AppDelegate.swift in Sources */,
 				4D84472C1E2ABDCD00606949 /* BTGameMapViewController.swift in Sources */,
 				88FD8D991E2A85CF0096E5EB /* FirstViewController.swift in Sources */,
+				4DC91A811E2B2A4B004CB018 /* BTInviteFriendsViewController.swift in Sources */,
 				883C58D31E2AF5F90062957F /* NotificationName+Extensions.swift in Sources */,
 				883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */,
 				4D6DE0DA1E2B141D00682F62 /* BTFacebookLoginViewController.swift in Sources */,

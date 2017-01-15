@@ -74,11 +74,12 @@ extension BTGameMapViewController {
         _distanseSlider.value = _currentDistanse
         _startButton.layer.cornerRadius = 20.0
         
-//        let bittagLogo = UIImageView(image: #imageLiteral(resourceName: "BitTag_Logo"))
+        let bittagLogo = UIImageView(image: #imageLiteral(resourceName: "BitTag_Logo_40px"))
 //        bittagLogo.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: 1, height: 1))
 //        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
 //        titleview.addSubview(bittagLogo)
-//        navigationItem.titleView = titleview
+        navigationItem.titleView = bittagLogo
+        
         let qrcodeButton = UIButton(type: .custom)
         qrcodeButton.setImage(#imageLiteral(resourceName: "icon-qrcode"), for: .normal)
         qrcodeButton.frame = CGRect(x: 0.0, y: 0.0, width: 44.0, height: 44.0)
