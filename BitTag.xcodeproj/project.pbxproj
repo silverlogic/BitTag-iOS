@@ -16,6 +16,9 @@
 		5DAF8D1210CAA6FB146DFBAE /* Pods_BitTagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914ECBB392B1058530C4BAD /* Pods_BitTagTests.framework */; };
 		881C037C1E2B48C800161B94 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C037B1E2B48C800161B94 /* PushNotificationManager.swift */; };
 		881C037F1E2B669B00161B94 /* BluetoothDiscover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C037E1E2B669B00161B94 /* BluetoothDiscover.swift */; };
+		881C03811E2B779800161B94 /* BTParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C03801E2B779800161B94 /* BTParticipant.swift */; };
+		881C03831E2B85D000161B94 /* ParticipantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C03821E2B85D000161B94 /* ParticipantsManager.swift */; };
+		881C03871E2B889A00161B94 /* BTGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C03861E2B889A00161B94 /* BTGame.swift */; };
 		883C58BE1E2A98550062957F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BD1E2A98550062957F /* APIClient.swift */; };
 		883C58C01E2AA0AA0062957F /* BTExtendedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */; };
 		883C58C21E2AA9C30062957F /* BTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C58C11E2AA9C30062957F /* BTUser.swift */; };
@@ -60,6 +63,9 @@
 		881C037A1E2B3DC800161B94 /* BitTag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BitTag.entitlements; sourceTree = "<group>"; };
 		881C037B1E2B48C800161B94 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationManager.swift; path = ServiceClasses/Singletons/PushNotificationManager.swift; sourceTree = "<group>"; };
 		881C037E1E2B669B00161B94 /* BluetoothDiscover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothDiscover.swift; path = ServiceClasses/Utilities/BluetoothDiscover.swift; sourceTree = "<group>"; };
+		881C03801E2B779800161B94 /* BTParticipant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTParticipant.swift; path = Models/BTParticipant.swift; sourceTree = "<group>"; };
+		881C03821E2B85D000161B94 /* ParticipantsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantsManager.swift; path = ServiceClasses/Singletons/ParticipantsManager.swift; sourceTree = "<group>"; };
+		881C03861E2B889A00161B94 /* BTGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTGame.swift; path = Models/BTGame.swift; sourceTree = "<group>"; };
 		883C58BD1E2A98550062957F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ServiceClasses/Singletons/APIClient.swift; sourceTree = "<group>"; };
 		883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTExtendedError.swift; path = Models/BTExtendedError.swift; sourceTree = "<group>"; };
 		883C58C11E2AA9C30062957F /* BTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTUser.swift; path = Models/BTUser.swift; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 				883C58BD1E2A98550062957F /* APIClient.swift */,
 				883C58CC1E2AE34B0062957F /* AuthenticationManager.swift */,
 				881C037B1E2B48C800161B94 /* PushNotificationManager.swift */,
+				881C03821E2B85D000161B94 /* ParticipantsManager.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -226,6 +233,8 @@
 			children = (
 				883C58BF1E2AA0AA0062957F /* BTExtendedError.swift */,
 				883C58C11E2AA9C30062957F /* BTUser.swift */,
+				881C03801E2B779800161B94 /* BTParticipant.swift */,
+				881C03861E2B889A00161B94 /* BTGame.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -514,9 +523,12 @@
 				883C58C81E2AD6F70062957F /* BTInitialNavigationController.swift in Sources */,
 				883C58C61E2AD6990062957F /* BTTabBarViewController.swift in Sources */,
 				881C037C1E2B48C800161B94 /* PushNotificationManager.swift in Sources */,
+				881C03811E2B779800161B94 /* BTParticipant.swift in Sources */,
 				883C58C21E2AA9C30062957F /* BTUser.swift in Sources */,
 				883C58CD1E2AE34B0062957F /* AuthenticationManager.swift in Sources */,
+				881C03831E2B85D000161B94 /* ParticipantsManager.swift in Sources */,
 				88FD8D9B1E2A85CF0096E5EB /* SecondViewController.swift in Sources */,
+				881C03871E2B889A00161B94 /* BTGame.swift in Sources */,
 				881C037F1E2B669B00161B94 /* BluetoothDiscover.swift in Sources */,
 				88FD8D971E2A85CF0096E5EB /* AppDelegate.swift in Sources */,
 				4DC91A891E2B8CDC004CB018 /* BTCreateGameViewController.swift in Sources */,
