@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="BTInitialViewController" id="JtW-MU-rSt" customClass="BTInitialViewController" customModule="BitTag" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="cjc-Lr-ouj" kind="presentation" identifier="gotoApplication" id="BRs-c0-1nF"/>
+                        <segue destination="h8j-R4-Da6" kind="presentation" identifier="gotoApplication" id="jRC-lS-eGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXx-NT-RoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrn-FY-HKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="-1740.1799100449775"/>
+            <point key="canvasLocation" x="994" y="-1740"/>
         </scene>
         <!--Victory View Controller-->
         <scene sceneID="5RP-QS-Fe3">
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGP-rO-RvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173.5999999999999" y="-1740.1799100449775"/>
+            <point key="canvasLocation" x="1932" y="-1740"/>
         </scene>
         <!--BitTag-->
         <scene sceneID="UiN-MT-8G7">
@@ -445,7 +445,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="El4-EY-OMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-913"/>
+            <point key="canvasLocation" x="1932" y="-913"/>
+        </scene>
+        <!--Wallet View Controller-->
+        <scene sceneID="x9j-fM-osh">
+            <objects>
+                <viewController storyboardIdentifier="BTWalletViewController" id="h8j-R4-Da6" customClass="BTWalletViewController" customModule="BitTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MKW-Pt-3OX"/>
+                        <viewControllerLayoutGuide type="bottom" id="tVS-rp-2fz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OEH-dC-2Ba">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="Bo8-LA-lqF">
+                                <rect key="frame" x="57" y="28" width="260" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bo8-LA-lqF" secondAttribute="height" multiplier="1:1" id="Gy6-du-juQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EP-jN-Xal">
+                                <rect key="frame" x="57" y="296" width="260" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" red="0.94509803920000002" green="0.36470588240000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kN6-B3-Zca">
+                                <rect key="frame" x="81" y="611" width="200" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="cjc-Lr-ouj" kind="presentation" id="FHX-cw-gbm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcl-ru-6BT">
+                                <rect key="frame" x="81" y="567" width="200" height="36"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.36470588240000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Copy Address"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hcl-ru-6BT" firstAttribute="leading" secondItem="OEH-dC-2Ba" secondAttribute="leadingMargin" constant="65" id="34z-0r-M9K"/>
+                            <constraint firstItem="Bo8-LA-lqF" firstAttribute="top" secondItem="MKW-Pt-3OX" secondAttribute="bottom" constant="8" symbolic="YES" id="3zm-EM-nvg"/>
+                            <constraint firstItem="hcl-ru-6BT" firstAttribute="leading" secondItem="kN6-B3-Zca" secondAttribute="leading" id="7ol-Ue-26j"/>
+                            <constraint firstItem="Bo8-LA-lqF" firstAttribute="leading" secondItem="8EP-jN-Xal" secondAttribute="leading" id="H9F-sb-2vJ"/>
+                            <constraint firstItem="hcl-ru-6BT" firstAttribute="trailing" secondItem="kN6-B3-Zca" secondAttribute="trailing" id="Io4-oa-U9F"/>
+                            <constraint firstItem="Bo8-LA-lqF" firstAttribute="centerX" secondItem="OEH-dC-2Ba" secondAttribute="centerX" id="Nx4-Rb-MjQ"/>
+                            <constraint firstItem="kN6-B3-Zca" firstAttribute="top" secondItem="hcl-ru-6BT" secondAttribute="bottom" constant="8" symbolic="YES" id="W2D-IL-nc2"/>
+                            <constraint firstItem="Bo8-LA-lqF" firstAttribute="leading" secondItem="OEH-dC-2Ba" secondAttribute="leadingMargin" constant="41" id="YpL-T1-Cux"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hcl-ru-6BT" secondAttribute="trailing" constant="78" id="aJa-ta-aKT"/>
+                            <constraint firstItem="Bo8-LA-lqF" firstAttribute="trailing" secondItem="8EP-jN-Xal" secondAttribute="trailing" id="c4v-27-E4C"/>
+                            <constraint firstItem="8EP-jN-Xal" firstAttribute="top" secondItem="Bo8-LA-lqF" secondAttribute="bottom" constant="8" symbolic="YES" id="el8-q7-yxo"/>
+                            <constraint firstAttribute="bottom" secondItem="kN6-B3-Zca" secondAttribute="bottom" constant="20" symbolic="YES" id="ffO-F9-URA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_copyAddressButton" destination="hcl-ru-6BT" id="SUf-AA-aLa"/>
+                        <outlet property="_doneButton" destination="kN6-B3-Zca" id="DIc-Pk-oYY"/>
+                        <outlet property="_imageView" destination="Bo8-LA-lqF" id="Ftz-BB-JG1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbS-md-s3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.59999999999999" y="-913.49325337331345"/>
         </scene>
         <!--Tag!-->
         <scene sceneID="p1p-Gx-m9K">
@@ -514,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5V-IW-FZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="-120"/>
+            <point key="canvasLocation" x="1932" y="-120"/>
         </scene>
         <!--Invite Friends-->
         <scene sceneID="BeK-2c-nyt">
@@ -683,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6B-WB-3Wr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="-913"/>
+            <point key="canvasLocation" x="2866" y="-913"/>
         </scene>
         <!--New Game-->
         <scene sceneID="BhC-zq-xO3">
@@ -863,7 +930,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svu-zO-Tlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3036" y="-913"/>
+            <point key="canvasLocation" x="3794" y="-913"/>
         </scene>
         <!--Item-->
         <scene sceneID="Bsn-xf-xdO">
@@ -888,7 +955,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6d-j4-tTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="-913"/>
+            <point key="canvasLocation" x="994" y="-913"/>
         </scene>
     </scenes>
     <resources>
@@ -899,6 +966,7 @@
         <image name="icon-goldbitcoin" width="700" height="700"/>
         <image name="pin-gamecenter" width="1024" height="1024"/>
         <image name="pin-merchant" width="1024" height="1024"/>
+        <image name="qrcode" width="370" height="370"/>
     </resources>
     <color key="tintColor" red="0.94509803920000002" green="0.36470588240000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
 </document>
